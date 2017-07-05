@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deliver_order_number: MyString
+
+two:
+  deliver_order_number: MyString
