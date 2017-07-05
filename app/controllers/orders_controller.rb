@@ -1,4 +1,4 @@
-class OrdersContoller < ApplicationController
+class OrdersController < ApplicationController
 
   def index
     render json: { data: Order.all }
