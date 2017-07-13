@@ -7,4 +7,8 @@ class OrdersController < ApplicationController
     Order.pusher_prueba
     render json: { requested: true }
   end
+  def end_session_stock
+    Order.end_session_stock
+    render json: { requested: true }
+  end
 end
