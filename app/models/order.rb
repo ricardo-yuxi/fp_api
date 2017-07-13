@@ -78,4 +78,46 @@ class Order < ApplicationRecord
       })
 
   end
+  def self.end_session_stock
+  Pusher.trigger('test_channel_ng', 'endsession_stock', {
+        :status => true,
+        :data =>[
+                  {
+                      "color": "WHITE",
+                      "order": {
+                          "id": "5",
+                          "deliver_order_number": "100108633",
+                          "local_status": 3,
+                          "cook":  {
+                              "code": "2",
+                              "name": "Maria Rios",
+                              "used": true
+                          },
+                          "created_at": "2017-06-29 07:10:09",
+                          "products": [
+                              {
+                                "quantity": 5,
+                                "name": "Kroger Meal Deal"
+                              },
+                              {
+                                "quantity": 2,
+                                "name": "Italian Sausage"
+                              },
+                              {
+                                "quantity": 5,
+                                "name": "beer"
+                              }
+                          ],
+                          "positions": [ {
+                              number: "5",
+                              quantity: 1 
+                            }
+                          ]
+                      }
+                  }
+                ]
+        })
+
+  end
+
 end

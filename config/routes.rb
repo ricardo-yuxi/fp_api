@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   scope :api do
     resources :orders
     post :pusher_prueba, to: 'orders#pusher_prueba'
+    post :end_session_stock, to: 'orders#end_session_stock'
+
   end
 end
