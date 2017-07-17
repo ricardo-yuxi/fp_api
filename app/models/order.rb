@@ -79,7 +79,8 @@ class Order < ApplicationRecord
 
   end
   def self.end_session_stock
-  Pusher.trigger('test_channel_ng', 'endsession_stock', {
+  sleep(5)
+  Pusher.trigger('test_channel_ng', 'finish_deliver', {
         :status => true,
         :data =>[
                   {
